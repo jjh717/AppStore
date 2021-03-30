@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "KakaoTalk_Photo_2020-06-26-11-39-39.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "KakaoTalk_Photo_2020-06-26-11-44-33.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

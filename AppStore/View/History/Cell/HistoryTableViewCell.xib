@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" rowHeight="90" id="9oI-uN-8dw" customClass="HistoryTableViewCell" customModule="AppStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9oI-uN-8dw" id="1v8-6U-5qY">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GlQ-eH-JtA">
+                        <rect key="frame" x="0.0" y="15" width="414" height="60"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9dJ-xE-peQ">
+                                <rect key="frame" x="0.0" y="1" width="20" height="58"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="2qd-7J-sfr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cJ-G7-LBY">
+                                <rect key="frame" x="35" y="0.0" width="379" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ai4-yK-Wu2">
+                        <rect key="frame" x="0.0" y="89" width="414" height="1"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="22P-bo-UF8"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="GlQ-eH-JtA" secondAttribute="trailing" id="Jxb-r9-XhQ"/>
+                    <constraint firstItem="ai4-yK-Wu2" firstAttribute="leading" secondItem="1v8-6U-5qY" secondAttribute="leading" id="MJE-Qy-n5g"/>
+                    <constraint firstAttribute="trailing" secondItem="ai4-yK-Wu2" secondAttribute="trailing" id="Wfm-tD-OFu"/>
+                    <constraint firstAttribute="bottom" secondItem="ai4-yK-Wu2" secondAttribute="bottom" id="b7F-WI-WZq"/>
+                    <constraint firstItem="ai4-yK-Wu2" firstAttribute="centerX" secondItem="1v8-6U-5qY" secondAttribute="centerX" id="eEG-MV-hzX"/>
+                    <constraint firstAttribute="bottom" secondItem="GlQ-eH-JtA" secondAttribute="bottom" constant="15" id="h7z-8q-G3f"/>
+                    <constraint firstItem="GlQ-eH-JtA" firstAttribute="top" secondItem="1v8-6U-5qY" secondAttribute="top" constant="15" id="jd7-Vb-0AD"/>
+                    <constraint firstItem="GlQ-eH-JtA" firstAttribute="leading" secondItem="1v8-6U-5qY" secondAttribute="leading" id="zwe-7F-cEX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bottomLineImageView" destination="ai4-yK-Wu2" id="EmY-MX-h5F"/>
+                <outlet property="searchImageView" destination="9dJ-xE-peQ" id="ek9-uE-aJC"/>
+                <outlet property="titleLabel" destination="4cJ-G7-LBY" id="xdK-VF-RBw"/>
+            </connections>
+            <point key="canvasLocation" x="-565.21739130434787" y="168.08035714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
