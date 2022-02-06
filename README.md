@@ -1,5 +1,7 @@
 # AppStore
 
+xib + Storyboard
+
 platform :ios, '10.0'
 
 
