@@ -2,7 +2,7 @@
 //  HandImagePresent.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/24.
+//  Created by jjh717
 //
 
 import UIKit

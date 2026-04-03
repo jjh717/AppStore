@@ -2,10 +2,10 @@
 //  ServiceProvider.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/19.
+//  Created by jjh717
 //
 
-protocol ServiceProviderType: class {
+protocol ServiceProviderType: AnyObject {
     var userDefaultsService: UserDefaultsServiceType { get }
     var apiService: APIServiceType { get }
 }

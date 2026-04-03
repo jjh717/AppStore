@@ -2,13 +2,13 @@
 //  DetailTableView.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/21.
+//  Created by jjh717
 //
 
 import UIKit
 import ReactorKit
 
-protocol DetailTableViewDelegate: class {
+protocol DetailTableViewDelegate: AnyObject {
     func scroll(_ scrollView: UIScrollView)
 }
 
@@ -22,14 +22,14 @@ class DetailTableView: UITableView, ReactorKit.View {
             }
             return false
         }).subscribe(onNext: { [weak self] _ in
-            guard let `self` = self else { return }
+            guard let self else { return }
             self.reloadData()
         })
         .disposed(by: disposeBag)
         
         reactor.state.map { $0.convertHeight }
             .subscribe(onNext: { [weak self] _ in
-                guard let `self` = self else { return }
+                guard let self else { return }
                 self.beginUpdates()
                 self.endUpdates()
             })

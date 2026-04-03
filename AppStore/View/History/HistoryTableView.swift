@@ -2,13 +2,13 @@
 //  HistoryTableView.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/19.
+//  Created by jjh717
 //
 
 import UIKit
 import ReactorKit
 
-protocol HistoryTableViewDelegate: class {
+protocol HistoryTableViewDelegate: AnyObject {
     func historySelect(title: String)
 }
 
@@ -20,7 +20,7 @@ class HistoryTableView: UITableView, ReactorKit.View {
      
     func bind(reactor: SearchKeywordReactor) {
         reactor.state.map { $0.visibleData }.bind(to: self.rx.items) { [weak self, weak reactor] (tableView, row, item) -> UITableViewCell in
-            guard let `self` = self else { return UITableViewCell() }
+            guard let self else { return UITableViewCell() }
             guard let reactor = reactor else { return UITableViewCell() }
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HistoryTableViewCell.self), for: IndexPath(row: row, section: 0)) as? HistoryTableViewCell else { return UITableViewCell() }
@@ -41,7 +41,7 @@ class HistoryTableView: UITableView, ReactorKit.View {
         }.disposed(by: disposeBag)
         
         self.rx.itemSelected.subscribe(onNext: { [weak self, weak reactor] indexPath in
-            guard let `self` = self else { return }
+            guard let self else { return }
             guard let reactor = reactor else { return }
              
             let title = reactor.currentState.visibleData[indexPath.row]

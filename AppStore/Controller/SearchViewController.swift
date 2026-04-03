@@ -2,7 +2,7 @@
 //  SearchViewController.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/19.
+//  Created by jjh717
 //
 
 import UIKit
@@ -47,13 +47,13 @@ class SearchViewController: BaseViewController, StoryboardView {
             .disposed(by: disposeBag)
          
         reactor.state.map { $0.isDataLoading }.observeOn(MainScheduler.asyncInstance).subscribe(onNext: { [weak self] in
-            guard let `self` = self else { return }
+            guard let self else { return }
              
             self.indicator.configure(IndicatorPresent(!$0))
         }).disposed(by: disposeBag)
          
         searchController.searchBar.rx.searchButtonClicked.observeOn(MainScheduler.asyncInstance).asDriver(onErrorJustReturn: ()).drive(onNext: { [weak self] in
-            guard let `self` = self else { return }
+            guard let self else { return }
             guard let text = self.searchController.searchBar.text else { return }
 
             self.listShowing(index: ViewingList.AppList.rawValue)
@@ -61,13 +61,13 @@ class SearchViewController: BaseViewController, StoryboardView {
         }).disposed(by: disposeBag)
             
         searchController.searchBar.rx.cancelButtonClicked.asDriver(onErrorJustReturn: ()).drive(onNext: { [weak self] in
-            guard let `self` = self else { return }
+            guard let self else { return }
             self.listShowing(index: ViewingList.History.rawValue)
         }).disposed(by: disposeBag)
         
         reactor.state.map { $0.viewingListState }
             .observeOn(MainScheduler.asyncInstance).subscribe(onNext: { [weak self] in
-                guard let `self` = self else { return }
+                guard let self else { return }
           
                 self.listShowing(index: $0)
                 

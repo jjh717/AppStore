@@ -1,29 +1,102 @@
 # AppStore
 
-xib + Storyboard
+App Store clone built with **UIKit (ReactorKit)** and **SwiftUI** implementations.
 
-platform :ios, '10.0'
+Searches the iTunes API and displays app details including screenshots, ratings, reviews, and compatibility info.
 
+## Features
 
-target 'AppStore' do
+- iTunes Search API integration
+- Search history with UserDefaults persistence
+- App detail view (title, screenshots, description, ratings, info)
+- Screenshot gallery with horizontal scrolling
+- Star rating display
+- iPad screenshot support
+- Dynamic cell heights
 
-    pod 'RxSwift', '~> 5'
-    
-    pod 'RxCocoa', '~> 5'
-    
-    pod 'ReactorKit'
-    
-end
+## Requirements
 
+- iOS 17.0+
+- Swift 5.9+
+- Xcode 15.0+
 
-![Simulator Screen Shot - iPhone 12 - 2021-03-31 at 00 55 32](https://user-images.githubusercontent.com/5820255/113018979-12c96600-91bc-11eb-9ca0-48a79700ba15.png) 
-![Simulator Screen Shot - iPhone 12 - 2021-03-31 at 00 59 30](https://user-images.githubusercontent.com/5820255/113019278-61770000-91bc-11eb-86fc-64de90ec1db5.png) 
-![Simulator Screen Shot - iPhone 12 - 2021-03-31 at 00 56 05](https://user-images.githubusercontent.com/5820255/113018973-10ffa280-91bc-11eb-88cc-c222d59c5926.png) 
-![Simulator Screen Shot - iPhone 12 - 2021-03-31 at 00 56 13](https://user-images.githubusercontent.com/5820255/113018968-0fce7580-91bc-11eb-9335-6d9e2c188c4e.png) 
-![Simulator Screen Shot - iPhone 12 - 2021-03-31 at 01 02 17](https://user-images.githubusercontent.com/5820255/113019617-c5012d80-91bc-11eb-9f4b-edcbf4fb7530.png)
-![Simulator Screen Shot - iPhone 12 - 2021-03-31 at 00 56 36](https://user-images.githubusercontent.com/5820255/113018957-0c3aee80-91bc-11eb-8840-225aabdcc75e.png) 
+## Dependencies (SPM)
 
+- [RxSwift 6.x](https://github.com/ReactiveX/RxSwift) - UIKit version
+- [RxCocoa 6.x](https://github.com/ReactiveX/RxSwift) - UIKit version
+- [ReactorKit 3.x](https://github.com/ReactorKit/ReactorKit) - UIKit version
 
+## Project Structure
 
+```
+AppStore/
+├── AppStore/                      # UIKit Version (ReactorKit + RxSwift)
+│   ├── App/
+│   │   ├── AppDelegate.swift
+│   │   └── Main.storyboard
+│   ├── Model/
+│   │   ├── AppInfo.swift
+│   │   └── Review.swift
+│   ├── Reactor/
+│   │   ├── SearchKeywordReactor.swift
+│   │   ├── DetailReactor.swift
+│   │   └── InfoDetailReactor.swift
+│   ├── Service/
+│   │   ├── Networking/ (APIService, Constants, UserEndpoint)
+│   │   └── UserDefaults/ (UserDefaultsService, UserDefaultsKey)
+│   ├── Controller/
+│   │   ├── BaseViewController.swift
+│   │   ├── SearchViewController.swift
+│   │   └── DetailViewController.swift
+│   ├── View/
+│   │   ├── Detail/ (DetailTableView, InfoDetailTableView, Cells...)
+│   │   ├── List/ (SearchListTableView, Cells...)
+│   │   ├── History/ (HistoryTableView, Cells...)
+│   │   └── Present/ (Protocol-based data presenters)
+│   └── Extension/
+│
+└── AppStoreSwiftUI/               # SwiftUI Version
+    ├── App/
+    │   └── AppStoreApp.swift
+    ├── Models/
+    │   └── AppInfo.swift
+    ├── Services/
+    │   └── APIService.swift (async/await + actor)
+    ├── ViewModels/
+    │   └── SearchViewModel.swift (@Observable)
+    └── Views/
+        ├── SearchView.swift
+        ├── AppDetailView.swift
+        └── StarRatingView.swift
+```
 
+## UIKit Version
 
+- **ReactorKit** - Unidirectional data flow (Action/Mutation/State)
+- **RxSwift/RxCocoa** - Reactive bindings
+- **XIB + Storyboard** - Interface Builder layouts
+- **ServiceProvider** - Dependency injection pattern
+- **Presenter pattern** - Protocol-based data formatting
+
+## SwiftUI Version
+
+- **@Observable** macro (iOS 17+)
+- **async/await** - Native concurrency for API calls
+- **actor** - Thread-safe API service
+- **AsyncImage** - Native async image loading
+- **NavigationStack** - Modern navigation
+- **MVVM** architecture
+
+## Modernization Changes
+
+| Before | After |
+|---|---|
+| CocoaPods (RxSwift 5) | SPM (RxSwift 6) |
+| `protocol: class` | `protocol: AnyObject` |
+| `guard let \`self\`` | `guard let self` |
+| `UserDefaults.synchronize()` | Removed (auto-sync) |
+| iOS 10.0+ | iOS 17.0+ |
+
+## License
+
+MIT

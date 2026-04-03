@@ -2,7 +2,7 @@
 //  HistoryBottomLinePresent.swift
 //  AppStore
 //
-//  Created by j on 2021/03/25.
+//  Created by jjh717
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  UserDefaultsKey.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/19.
+//  Created by jjh717
 //
 
 struct UserDefaultsKey<T> {

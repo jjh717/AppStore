@@ -2,13 +2,13 @@
 //  ScreenShotCell.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/21.
+//  Created by jjh717
 //
 
 import UIKit
 import ReactorKit
 
-protocol ScreenShotCellDelegate: class {
+protocol ScreenShotCellDelegate: AnyObject {
     func screenShotDropButtonClick(index: Int?)
 }
 
@@ -18,7 +18,7 @@ class ScreenShotCell: UITableViewCell, ReactorKit.View {
     func bind(reactor: DetailReactor) {        
         reactor.state.map { $0.iphoneScreenShotSize }
             .subscribe(onNext: { [weak self] in
-                guard let `self` = self else { return }
+                guard let self else { return }
                  
                 self.screenShotCollectionViewHeight.constant = $0?.height ?? 0
             })
@@ -26,7 +26,7 @@ class ScreenShotCell: UITableViewCell, ReactorKit.View {
         
         reactor.state.map { $0.ipadScreenShotSize }
             .subscribe(onNext: { [weak self] in
-                guard let `self` = self else { return }
+                guard let self else { return }
                 
                 self.iPadScreenShotCollectionViewHeight.constant = $0?.height ?? 0
             })

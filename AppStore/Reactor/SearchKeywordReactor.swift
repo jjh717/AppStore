@@ -2,9 +2,10 @@
 //  SearchKeywordReactor.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/19.
+//  Created by jjh717
 //
 
+import Foundation
 import ReactorKit
 import RxCocoa
 import RxSwift

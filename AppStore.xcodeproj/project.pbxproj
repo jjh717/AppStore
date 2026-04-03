@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -89,7 +89,6 @@
 		09EA2A3D2604FF9200328DD1 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA2A3B2604FF9200328DD1 /* CustomImageView.swift */; };
 		09EA2A3E2604FF9200328DD1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA2A3C2604FF9200328DD1 /* CustomView.swift */; };
 		09EA2A412605027C00328DD1 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA2A402605027C00328DD1 /* Review.swift */; };
-		AFF474B1D9A6B2A363090044 /* libPods-AppStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B75E7DE01F982847F05BB /* libPods-AppStore.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,9 +176,6 @@
 		09EA2A3B2604FF9200328DD1 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		09EA2A3C2604FF9200328DD1 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		09EA2A402605027C00328DD1 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		315CCB978467DF5C200F610B /* Pods-AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.debug.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.debug.xcconfig"; sourceTree = "<group>"; };
-		BF4B75E7DE01F982847F05BB /* libPods-AppStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFB942089D7223882D486CEA /* Pods-AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.release.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF474B1D9A6B2A363090044 /* libPods-AppStore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +192,6 @@
 		0175DE6AE9D51A662F21566E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF4B75E7DE01F982847F05BB /* libPods-AppStore.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -305,7 +299,6 @@
 			children = (
 				09EA298C2604D99600328DD1 /* AppStore */,
 				09EA298B2604D99600328DD1 /* Products */,
-				F25DB1A9EC82956DD3A6BC4F /* Pods */,
 				0175DE6AE9D51A662F21566E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -446,15 +439,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F25DB1A9EC82956DD3A6BC4F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				315CCB978467DF5C200F610B /* Pods-AppStore.debug.xcconfig */,
-				CFB942089D7223882D486CEA /* Pods-AppStore.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,7 +446,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09EA299E2604D99700328DD1 /* Build configuration list for PBXNativeTarget "AppStore" */;
 			buildPhases = (
-				851FEF47ABFA07A4AE9FC543 /* [CP] Check Pods Manifest.lock */,
 				09EA29862604D99600328DD1 /* Sources */,
 				09EA29872604D99600328DD1 /* Frameworks */,
 				09EA29882604D99600328DD1 /* Resources */,
@@ -472,6 +455,11 @@
 			dependencies = (
 			);
 			name = AppStore;
+			packageProductDependencies = (
+				CC000003249B000000000001 /* RxSwift */,
+				CC000004249B000000000001 /* RxCocoa */,
+				CC000005249B000000000001 /* ReactorKit */,
+			);
 			productName = AppStore;
 			productReference = 09EA298A2604D99600328DD1 /* AppStore.app */;
 			productType = "com.apple.product-type.application";
@@ -491,7 +479,7 @@
 				};
 			};
 			buildConfigurationList = 09EA29852604D99600328DD1 /* Build configuration list for PBXProject "AppStore" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -502,6 +490,10 @@
 			productRefGroup = 09EA298B2604D99600328DD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
+			packageReferences = (
+				CC000001249B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CC000002249B000000000001 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+			);
 			targets = (
 				09EA29892604D99600328DD1 /* AppStore */,
 			);
@@ -537,30 +529,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		851FEF47ABFA07A4AE9FC543 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AppStore-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09EA29862604D99600328DD1 /* Sources */ = {
@@ -698,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -753,7 +721,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -765,19 +733,16 @@
 		};
 		09EA299F2604D99700328DD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 315CCB978467DF5C200F610B /* Pods-AppStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C2868PWM2A;
 				INFOPLIST_FILE = AppStore/App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/ReactorKit/ReactorKit.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/WeakMapTable/WeakMapTable.modulemap\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jjh.AppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -787,14 +752,13 @@
 		};
 		09EA29A02604D99700328DD1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFB942089D7223882D486CEA /* Pods-AppStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C2868PWM2A;
 				INFOPLIST_FILE = AppStore/App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -828,6 +792,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC000001249B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		CC000002249B000000000001 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC000003249B000000000001 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC000001249B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		CC000004249B000000000001 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC000001249B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CC000005249B000000000001 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC000002249B000000000001 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09EA29822604D99600328DD1 /* Project object */;
 }

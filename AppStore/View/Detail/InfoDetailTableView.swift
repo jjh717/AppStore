@@ -2,13 +2,13 @@
 //  InfoDetailTableView.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/21.
+//  Created by jjh717
 //
 
 import UIKit
 import ReactorKit
 
-protocol InfoDetailTableViewDelegate: class {
+protocol InfoDetailTableViewDelegate: AnyObject {
     func calculateHeight(index: Int)
 }
 
@@ -22,7 +22,7 @@ class InfoDetailTableView: UITableView, ReactorKit.View {
             }
             return false
         }).subscribe(onNext: { [weak self] _ in
-            guard let `self` = self else { return }
+            guard let self else { return }
              
             self.reloadData()
         })

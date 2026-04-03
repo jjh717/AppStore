@@ -2,7 +2,7 @@
 //  InfoDetailReactor.swift
 //  AppStore
 //
-//  Created by j on 2021/03/23.
+//  Created by jjh717
 //
 
 import Foundation

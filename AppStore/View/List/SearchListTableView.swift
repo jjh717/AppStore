@@ -2,13 +2,13 @@
 //  SearchListTableView.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/19.
+//  Created by jjh717
 //
 
 import UIKit
 import ReactorKit
 
-protocol SearchListTableViewDelegate: class {
+protocol SearchListTableViewDelegate: AnyObject {
     func detailSelect(appInfo: AppInfo?)
 }
 
@@ -40,7 +40,7 @@ class SearchListTableView: UITableView, ReactorKit.View {
         }.disposed(by: disposeBag)
         
         self.rx.itemSelected.subscribe(onNext: { [weak self, weak reactor] indexPath in
-            guard let `self` = self else { return }
+            guard let self else { return }
             guard let reactor = reactor else { return }
              
             self.searchListTableViewDelegate?.detailSelect(appInfo: reactor.currentState.appInfoData?[indexPath.row])

@@ -2,7 +2,7 @@
 //  UserDefaultsService.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/19.
+//  Created by jjh717
 //
 
 import Foundation
@@ -27,6 +27,5 @@ final class UserDefaultsService: BaseService, UserDefaultsServiceType {
     
     func set<T>(value: T?, forKey key: UserDefaultsKey<T>) {
         self.defaults.set(value, forKey: key.key)
-        self.defaults.synchronize() 
     }    
 }

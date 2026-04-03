@@ -2,7 +2,7 @@
 //  TitleCell.swift
 //  AppStore
 //
-//  Created by Paul Jang on 2021/03/21.
+//  Created by jjh717
 //
 
 import UIKit
