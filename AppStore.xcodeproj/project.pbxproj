@@ -89,6 +89,15 @@
 		09EA2A3D2604FF9200328DD1 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA2A3B2604FF9200328DD1 /* CustomImageView.swift */; };
 		09EA2A3E2604FF9200328DD1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA2A3C2604FF9200328DD1 /* CustomView.swift */; };
 		09EA2A412605027C00328DD1 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA2A402605027C00328DD1 /* Review.swift */; };
+		/* SwiftUI Target Build Files */
+		DD100001260A000000000001 /* AppStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD200001260A000000000001 /* AppStoreApp.swift */; };
+		DD100002260A000000000001 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD200002260A000000000001 /* AppInfo.swift */; };
+		DD100003260A000000000001 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD200003260A000000000001 /* APIService.swift */; };
+		DD100004260A000000000001 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD200004260A000000000001 /* SearchViewModel.swift */; };
+		DD100005260A000000000001 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD200005260A000000000001 /* SearchView.swift */; };
+		DD100006260A000000000001 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD200006260A000000000001 /* AppDetailView.swift */; };
+		DD100007260A000000000001 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD200007260A000000000001 /* StarRatingView.swift */; };
+		DD100008260A000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD200008260A000000000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,9 +185,27 @@
 		09EA2A3B2604FF9200328DD1 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		09EA2A3C2604FF9200328DD1 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		09EA2A402605027C00328DD1 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		/* SwiftUI Target File References */
+		DD300001260A000000000001 /* AppStoreSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD200001260A000000000001 /* AppStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreApp.swift; sourceTree = "<group>"; };
+		DD200002260A000000000001 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		DD200003260A000000000001 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		DD200004260A000000000001 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		DD200005260A000000000001 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DD200006260A000000000001 /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
+		DD200007260A000000000001 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		DD200008260A000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD200009260A000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD400001260A000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09EA29872604D99600328DD1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				09EA298C2604D99600328DD1 /* AppStore */,
+				DD500001260A000000000001 /* AppStoreSwiftUI */,
 				09EA298B2604D99600328DD1 /* Products */,
 				0175DE6AE9D51A662F21566E /* Frameworks */,
 			);
@@ -307,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				09EA298A2604D99600328DD1 /* AppStore.app */,
+				DD300001260A000000000001 /* AppStoreSwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,6 +468,63 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		/* SwiftUI Groups */
+		DD500001260A000000000001 /* AppStoreSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				DD500002260A000000000001 /* App */,
+				DD500003260A000000000001 /* Models */,
+				DD500004260A000000000001 /* Services */,
+				DD500005260A000000000001 /* ViewModels */,
+				DD500006260A000000000001 /* Views */,
+				DD200008260A000000000001 /* Assets.xcassets */,
+				DD200009260A000000000001 /* Info.plist */,
+			);
+			path = AppStoreSwiftUI;
+			sourceTree = "<group>";
+		};
+		DD500002260A000000000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DD200001260A000000000001 /* AppStoreApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DD500003260A000000000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD200002260A000000000001 /* AppInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD500004260A000000000001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DD200003260A000000000001 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DD500005260A000000000001 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DD200004260A000000000001 /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DD500006260A000000000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD200005260A000000000001 /* SearchView.swift */,
+				DD200006260A000000000001 /* AppDetailView.swift */,
+				DD200007260A000000000001 /* StarRatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -464,6 +550,23 @@
 			productReference = 09EA298A2604D99600328DD1 /* AppStore.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DD600001260A000000000001 /* AppStoreSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD700001260A000000000001 /* Build configuration list for PBXNativeTarget "AppStoreSwiftUI" */;
+			buildPhases = (
+				DD600002260A000000000001 /* Sources */,
+				DD400001260A000000000001 /* Frameworks */,
+				DD600003260A000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppStoreSwiftUI;
+			productName = AppStoreSwiftUI;
+			productReference = DD300001260A000000000001 /* AppStoreSwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -475,6 +578,9 @@
 				TargetAttributes = {
 					09EA29892604D99600328DD1 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					DD600001260A000000000001 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -496,6 +602,7 @@
 			);
 			targets = (
 				09EA29892604D99600328DD1 /* AppStore */,
+				DD600001260A000000000001 /* AppStoreSwiftUI */,
 			);
 		};
 /* End PBXProject section */
@@ -524,6 +631,14 @@
 				099B48DD2607373000BEC3F4 /* InfoCell.xib in Resources */,
 				099B48E02607373000BEC3F4 /* MoreTextCell.xib in Resources */,
 				09EA29972604D99700328DD1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD600003260A000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD100008260A000000000001 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +713,20 @@
 				09628875260C4EA100A4A291 /* InitalLabelPresent.swift in Sources */,
 				0988E6232608DC8F004C8433 /* DatePresent.swift in Sources */,
 				099B48EE260737A300BEC3F4 /* UILabel+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD600002260A000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD100001260A000000000001 /* AppStoreApp.swift in Sources */,
+				DD100002260A000000000001 /* AppInfo.swift in Sources */,
+				DD100003260A000000000001 /* APIService.swift in Sources */,
+				DD100004260A000000000001 /* SearchViewModel.swift in Sources */,
+				DD100005260A000000000001 /* SearchView.swift in Sources */,
+				DD100006260A000000000001 /* AppDetailView.swift in Sources */,
+				DD100007260A000000000001 /* StarRatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +899,43 @@
 			};
 			name = Release;
 		};
+		/* SwiftUI Target Build Configurations */
+		DD700002260A000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AppStoreSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjh.AppStoreSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD700003260A000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AppStoreSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjh.AppStoreSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -787,6 +953,15 @@
 			buildConfigurations = (
 				09EA299F2604D99700328DD1 /* Debug */,
 				09EA29A02604D99700328DD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD700001260A000000000001 /* Build configuration list for PBXNativeTarget "AppStoreSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD700002260A000000000001 /* Debug */,
+				DD700003260A000000000001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
