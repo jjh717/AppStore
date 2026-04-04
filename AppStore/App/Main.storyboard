@@ -14,10 +14,9 @@
             <objects>
                 <navigationController id="W0i-F4-94L" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="DtQ-Yc-Tss"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6rk-BL-lmp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6rk-BL-lmp">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xW9-jh-pA2">
                         <autoresizingMask key="autoresizingMask"/>
