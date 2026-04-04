@@ -21,19 +21,26 @@ class BaseViewController: UIViewController {
     }
 
     func setupUI() {
-        if #available(iOS 13.0, *) {
-            standardAppearanceShadowColor = self.navigationController?.navigationBar.standardAppearance.shadowColor
-            standardAppearanceBackgroundColor = self.navigationController?.navigationBar.standardAppearance.backgroundColor
-            standardAppearanceBlurEffect = self.navigationController?.navigationBar.standardAppearance.backgroundEffect
-        }
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+
+        standardAppearanceShadowColor = appearance.shadowColor
+        standardAppearanceBackgroundColor = appearance.backgroundColor
+        standardAppearanceBlurEffect = appearance.backgroundEffect
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        if #available(iOS 13.0, *) {
-            self.navigationController?.navigationBar.standardAppearance.shadowColor = standardAppearanceShadowColor
-            self.navigationController?.navigationBar.standardAppearance.backgroundColor = standardAppearanceBackgroundColor
-            self.navigationController?.navigationBar.standardAppearance.backgroundEffect = standardAppearanceBlurEffect
-        }
+        super.viewWillAppear(animated)
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.shadowColor = standardAppearanceShadowColor
+        appearance.backgroundColor = standardAppearanceBackgroundColor
+        appearance.backgroundEffect = standardAppearanceBlurEffect
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     func loadXib(type: Any, contentSize: CGRect) -> UITableView? {
