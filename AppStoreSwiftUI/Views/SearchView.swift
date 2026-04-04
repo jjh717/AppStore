@@ -14,17 +14,40 @@ struct SearchView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
+            List {
                 if viewModel.isLoading {
-                    ProgressView("Searching...")
+                    HStack {
+                        Spacer()
+                        ProgressView("Searching...")
+                        Spacer()
+                    }
+                    .listRowSeparator(.hidden)
                 } else if viewModel.isSearching {
-                    appListView
-                } else {
-                    historyView
+                    ForEach(viewModel.searchResults) { appInfo in
+                        NavigationLink(value: appInfo) {
+                            AppListRow(appInfo: appInfo)
+                        }
+                    }
+                } else if !viewModel.filteredHistory.isEmpty {
+                    Section("Recent Searches") {
+                        ForEach(viewModel.filteredHistory, id: \.self) { term in
+                            Button {
+                                searchText = term
+                                Task { await viewModel.search(term: term) }
+                            } label: {
+                                Label(term, systemImage: "magnifyingglass")
+                                    .foregroundStyle(.primary)
+                            }
+                        }
+                    }
                 }
             }
+            .listStyle(.plain)
             .navigationTitle("Search")
-            .searchable(text: $searchText, prompt: "App Store")
+            .navigationDestination(for: AppInfo.self) { appInfo in
+                AppDetailView(appInfo: appInfo)
+            }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "App Store")
             .onSubmit(of: .search) {
                 Task { await viewModel.search(term: searchText) }
             }
@@ -37,39 +60,6 @@ struct SearchView: View {
         }
     }
 
-    // MARK: - History View
-
-    private var historyView: some View {
-        List {
-            if !viewModel.searchHistory.isEmpty {
-                Section("Recent Searches") {
-                    ForEach(viewModel.filteredHistory, id: \.self) { term in
-                        Button {
-                            searchText = term
-                            Task { await viewModel.search(term: term) }
-                        } label: {
-                            Label(term, systemImage: "magnifyingglass")
-                                .foregroundStyle(.primary)
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // MARK: - App List View
-
-    private var appListView: some View {
-        List(viewModel.searchResults) { appInfo in
-            NavigationLink(value: appInfo) {
-                AppListRow(appInfo: appInfo)
-            }
-        }
-        .listStyle(.plain)
-        .navigationDestination(for: AppInfo.self) { appInfo in
-            AppDetailView(appInfo: appInfo)
-        }
-    }
 }
 
 // MARK: - App List Row
