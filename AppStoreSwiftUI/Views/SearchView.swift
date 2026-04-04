@@ -24,16 +24,16 @@ struct SearchView: View {
                 }
             }
             .navigationTitle("Search")
-        }
-        .searchable(text: $searchText, prompt: "App Store")
-        .onSubmit(of: .search) {
-            Task { await viewModel.search(term: searchText) }
-        }
-        .onChange(of: searchText) { _, newValue in
-            if newValue.isEmpty {
-                viewModel.clearSearch()
+            .searchable(text: $searchText, prompt: "App Store")
+            .onSubmit(of: .search) {
+                Task { await viewModel.search(term: searchText) }
             }
-            viewModel.filterHistory(with: newValue)
+            .onChange(of: searchText) { _, newValue in
+                if newValue.isEmpty {
+                    viewModel.clearSearch()
+                }
+                viewModel.filterHistory(with: newValue)
+            }
         }
     }
 
