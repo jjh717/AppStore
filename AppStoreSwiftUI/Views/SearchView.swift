@@ -35,8 +35,12 @@ struct SearchView: View {
                                 searchText = term
                                 Task { await viewModel.search(term: term) }
                             } label: {
-                                Label(term, systemImage: "magnifyingglass")
-                                    .foregroundStyle(.primary)
+                                Label {
+                                    highlightedText(term, highlight: searchText)
+                                } icon: {
+                                    Image(systemName: "magnifyingglass")
+                                        .foregroundStyle(.secondary)
+                                }
                             }
                         }
                     }
@@ -60,6 +64,22 @@ struct SearchView: View {
         }
     }
 
+    // MARK: - Highlighted Text
+
+    private func highlightedText(_ text: String, highlight: String) -> Text {
+        guard !highlight.isEmpty,
+              let range = text.range(of: highlight, options: .caseInsensitive) else {
+            return Text(text).foregroundColor(.secondary)
+        }
+
+        let before = String(text[text.startIndex..<range.lowerBound])
+        let match = String(text[range])
+        let after = String(text[range.upperBound...])
+
+        return Text(before).foregroundColor(.secondary)
+            + Text(match).bold().foregroundColor(.primary)
+            + Text(after).foregroundColor(.secondary)
+    }
 }
 
 // MARK: - App List Row
